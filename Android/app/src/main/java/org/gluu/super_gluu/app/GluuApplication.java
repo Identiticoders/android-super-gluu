@@ -2,13 +2,12 @@ package org.gluu.super_gluu.app;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
-import android.arch.lifecycle.ProcessLifecycleOwner;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ProcessLifecycleOwner;
 import android.os.Build;
-import android.support.multidex.MultiDexApplication;
-import android.util.Log;
+import androidx.multidex.MultiDexApplication;
 
 import SuperGluu.app.BuildConfig;
 import SuperGluu.app.R;

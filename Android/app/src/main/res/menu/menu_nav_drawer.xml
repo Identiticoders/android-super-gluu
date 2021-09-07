@@ -38,21 +38,21 @@
         </menu>
     </item>
 
-    <item android:title="@string/help">
+<!--    <item android:title="@string/help">-->
 
-        <menu>
+<!--        <menu>-->
 
-            <group android:checkableBehavior="none">
-                <item
-                    android:id="@+id/nav_user_guide"
-                    android:title="@string/user_guide" />
-                <item
-                    android:id="@+id/nav_privacy_policy"
-                    android:title="@string/privacy_policy" />
-            </group>
+<!--            <group android:checkableBehavior="none">-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_user_guide"-->
+<!--                    android:title="@string/user_guide" />-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_privacy_policy"-->
+<!--                    android:title="@string/privacy_policy" />-->
+<!--            </group>-->
 
-        </menu>
-    </item>
+<!--        </menu>-->
+<!--    </item>-->
 
     <group>
         <item

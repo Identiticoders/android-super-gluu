@@ -8,14 +8,13 @@ package org.gluu.super_gluu.app.fragment;
 
 import android.app.Activity;
 import android.graphics.Typeface;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.gluu.super_gluu.app.fragment.KeyFragmentListFragment;
 import org.gluu.super_gluu.app.model.KeyContent.KeyItem;
 import org.gluu.super_gluu.u2f.v2.model.TokenEntry;
 

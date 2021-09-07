@@ -13,7 +13,7 @@
         android:background="@drawable/rounded_row"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/pinCodeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             android:text="@string/pin_code_enable_title"
             android:textAlignment="center" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/pinSubCodeTitle"
             android:fontFamily="@font/proxima_nova_regular"
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         android:layout_marginLeft="20dp"
         android:gravity="center">
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/yes_button_pin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:text="@string/yes"
                 android:textColor="#ffffff" />
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/no_button_pin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

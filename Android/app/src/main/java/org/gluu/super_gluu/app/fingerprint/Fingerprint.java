@@ -9,7 +9,7 @@ import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
@@ -36,7 +36,7 @@ public class Fingerprint {
     private Context context;
     // Variable used for storing the key in the Android Keystore container
     private KeyStore keyStore;
-    private static final String KEY_NAME = BuildConfig.FINGERPRINT_NAME;
+    private static final String KEY_NAME = BuildConfig.APPLICATION_ID + BuildConfig.VERSION_NAME + BuildConfig.BUILD_TYPE;
     private Cipher cipher;
     private KeyguardManager keyguardManager;
     private FingerprintManager fingerprintManager;

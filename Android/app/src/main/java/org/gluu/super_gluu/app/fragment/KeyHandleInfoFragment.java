@@ -6,9 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -162,7 +163,7 @@ public class KeyHandleInfoFragment extends ToolbarFragment {
             @Override
             public void onPositiveButton() {
                 mDeleteListener.onDeleteKeyHandle(tokenEntry);
-                android.support.v4.app.FragmentManager fm = getFragmentManager();
+                FragmentManager fm = getFragmentManager();
                 fm.popBackStack();
             }
 

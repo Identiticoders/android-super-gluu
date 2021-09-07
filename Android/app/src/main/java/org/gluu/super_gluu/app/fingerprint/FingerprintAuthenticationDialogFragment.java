@@ -19,14 +19,13 @@ package org.gluu.super_gluu.app.fingerprint;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +48,7 @@ import SuperGluu.app.R;
  * A dialog which uses fingerprint APIs to authenticate the user, and falls back to password
  * authentication if fingerprint is not available.
  */
-public class FingerprintAuthenticationDialogFragment extends android.support.v4.app.DialogFragment
+public class FingerprintAuthenticationDialogFragment extends androidx.fragment.app.DialogFragment
         implements TextView.OnEditorActionListener, FingerprintUiHelper.Callback {
 
     private Button mCancelButton;

@@ -1,16 +1,14 @@
 package org.gluu.super_gluu.app.services;
 
-import android.app.Activity;
 import android.app.KeyguardManager;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.hardware.fingerprint.FingerprintManager;
 import android.preference.PreferenceManager;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
