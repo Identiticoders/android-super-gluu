@@ -125,7 +125,7 @@ public class KeyFragmentListFragment extends ToolbarFragment {
         //Sort keys by created date
         List<TokenEntry> tokensFromDB = new ArrayList<TokenEntry>(tokens);
         Collections.sort(tokensFromDB, (key1, key2) -> {
-            SimpleDateFormat isoDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+            SimpleDateFormat isoDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             try {
                 Date date1 = isoDateTimeFormat.parse(key1.getCreatedDate());
                 Date date2 = isoDateTimeFormat.parse(key2.getCreatedDate());
