@@ -243,9 +243,9 @@ public class RequestDetailFragment extends ToolbarFragment {
     private void updateLogo(){
 
         if(isUserInfo && isFailedLog()) {
-            mainImageView.setImageDrawable(getContext().getDrawable(R.drawable.log_detail_icon));
+            mainImageView.setImageDrawable(getContext().getDrawable(R.drawable.ic_icon_round_red));
         } else {
-            mainImageView.setImageDrawable(getContext().getDrawable(R.drawable.accept_deny_detail_icon));
+            mainImageView.setImageDrawable(getContext().getDrawable(R.drawable.ic_icon_round_green));
         }
     }
 

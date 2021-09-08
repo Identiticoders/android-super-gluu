@@ -133,13 +133,13 @@ public class CustomAlert extends Dialog {
             case DELETE_KEY:
             case DELETE_LOG:
             case EDIT_PIN:
-                alertImageView.setImageResource(R.drawable.delete_log_icon);
+                alertImageView.setImageResource(R.drawable.ic_delete_log_icon_red);
                 break;
             case RENAME_KEY:
-                alertImageView.setImageResource(R.drawable.edit_key_icon);
+                alertImageView.setImageResource(R.drawable.ic_edit_key_icon_red);
                 break;
             default:
-                alertImageView.setImageResource(R.drawable.default_alert_icon);
+                alertImageView.setImageResource(R.drawable.ic_default_alert_icon_azlabs);
         }
 
         Window window = getWindow();

@@ -114,7 +114,7 @@
         android:id="@+id/actionbar_icon"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:src="@drawable/delete_log_icon"
+        android:src="@drawable/ic_delete_log_icon_red"
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"/>
 

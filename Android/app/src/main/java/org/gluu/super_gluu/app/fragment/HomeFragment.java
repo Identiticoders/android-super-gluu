@@ -27,9 +27,9 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -71,11 +71,11 @@ public class HomeFragment extends Fragment implements TextView.OnEditorActionLis
     @BindView(R.id.button_scan)
     Button scanButton;
 
-    @BindView(R.id.adView)
-    AdView adView;
+//    @BindView(R.id.adView)
+//    AdView adView;
 
-    @BindView(R.id.remove_ad_card_view)
-    CardView removeAdView;
+//    @BindView(R.id.remove_ad_card_view)
+//    CardView removeAdView;
 
 //    @BindView(R.id.button_remove_ads)
 //    Button removeAdsButton;
@@ -95,17 +95,17 @@ public class HomeFragment extends Fragment implements TextView.OnEditorActionLis
 
 //    GluuAdListener gluuAdListener;
 
-    private BroadcastReceiver adBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-            boolean isAdFree = intent.getBooleanExtra("isAdFree", false);
-
-            if (context != null) {
-                handleAdBroadcastIntent(isAdFree);
-            }
-        }
-    };
+//    private BroadcastReceiver adBroadcastReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//
+//            boolean isAdFree = intent.getBooleanExtra("isAdFree", false);
+//
+//            if (context != null) {
+//                handleAdBroadcastIntent(isAdFree);
+//            }
+//        }
+//    };
 
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
@@ -181,36 +181,36 @@ public class HomeFragment extends Fragment implements TextView.OnEditorActionLis
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mMessageReceiver,
                 new IntentFilter("ox_request-precess-event"));
 
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(adBroadcastReceiver,
-                new IntentFilter("on-ad-free-event"));
+//        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(adBroadcastReceiver,
+//                new IntentFilter("on-ad-free-event"));
 
-        if(adView != null) {
-            adView.resume();
-        }
+//        if(adView != null) {
+//            adView.resume();
+//        }
     }
 
-    @Override
-    public void onPause() {
-        if(adView != null) {
-            adView.pause();
-        }
-        super.onPause();
-    }
+//    @Override
+//    public void onPause() {
+//        if(adView != null) {
+//            adView.pause();
+//        }
+//        super.onPause();
+//    }
 
     @Override
     public void onStop() {
         super.onStop();
         LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mMessageReceiver);
-        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(adBroadcastReceiver);
+//        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(adBroadcastReceiver);
     }
 
-    @Override
-    public void onDestroy() {
-        if(adView != null) {
-            adView.destroy();
-        }
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy() {
+//        if(adView != null) {
+//            adView.destroy();
+//        }
+//        super.onDestroy();
+//    }
 
     @Override
     public void onAttach(Context context) {
@@ -404,12 +404,12 @@ public class HomeFragment extends Fragment implements TextView.OnEditorActionLis
         return false;
     }
 
-    private void handleAdBroadcastIntent(Boolean isAdFree){
-        if (isAdFree) {
-            removeAdView.setVisibility(View.GONE);
-            adView.setVisibility(View.GONE);
-        }
-    }
+//    private void handleAdBroadcastIntent(Boolean isAdFree){
+//        if (isAdFree) {
+//            removeAdView.setVisibility(View.GONE);
+//            adView.setVisibility(View.GONE);
+//        }
+//    }
 
     private class Constant {
         private static final int AUTH_SUCCESS = R.string.auth_result_success;

@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/custom_toolbar_icon" />
+            android:padding="5dp"
+            android:src="@drawable/ic_icon_white" />
 
     </RelativeLayout>
 
@@ -31,14 +32,14 @@
         android:layout_marginTop="36dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/remove_ad_card_view"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/mimic_toolbar">
 
         <ImageView
             android:id="@+id/qr_code_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/qr_home_screen"
+            android:src="@drawable/qr_home_screen_red"
             app:layout_constraintBottom_toTopOf="@+id/welcome_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +93,7 @@
             android:includeFontPadding="false"
             android:paddingLeft="48dp"
             android:paddingRight="48dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="180dp"
             android:text="@string/button_scan_text"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -106,45 +107,46 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/remove_ad_card_view"
-        android:layout_above="@+id/adView"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="12dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/remove_ad_card_view"-->
+<!--        android:layout_above="@+id/adView"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:cardElevation="2dp"-->
+<!--        app:cardCornerRadius="12dp"-->
+<!--        android:layout_marginBottom="24dp"-->
+<!--        android:layout_marginLeft="24dp"-->
+<!--        android:layout_marginRight="24dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="invisible">-->
 
-        <Button
-            android:layout_gravity="center"
-            android:id="@+id/button_remove_ads"
-            android:textColor="@color/whiteColor"
-            android:background="@drawable/rounded_indigo_button"
-            android:textAllCaps="false"
-            android:text="@string/remove_ads"
-            android:includeFontPadding="false"
-            android:layout_marginRight="48dp"
-            android:fontFamily="@font/proxima_nova_regular"
-            android:layout_marginLeft="48dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="36dp" />
+<!--        <Button-->
+<!--            android:layout_gravity="center"-->
+<!--            android:id="@+id/button_remove_ads"-->
+<!--            android:textColor="@color/whiteColor"-->
+<!--            android:background="@drawable/rounded_indigo_button"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:text="@string/remove_ads"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:layout_marginRight="48dp"-->
+<!--            android:fontFamily="@font/proxima_nova_regular"-->
+<!--            android:layout_marginLeft="48dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="36dp" />-->
 
-    </androidx.cardview.widget.CardView>
+<!--    </androidx.cardview.widget.CardView>-->
 
     <!-- The ad view -->
-    <com.google.android.gms.ads.AdView
-        android:visibility="invisible"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adUnitId="@string/banner_ad_unit_id"
-        app:adSize="SMART_BANNER"/>
+<!--    <com.google.android.gms.ads.AdView-->
+<!--        android:visibility="invisible"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:id="@+id/adView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        ads:adUnitId="@string/banner_ad_unit_id"-->
+<!--        app:adSize="SMART_BANNER"/>-->
 
 </RelativeLayout>

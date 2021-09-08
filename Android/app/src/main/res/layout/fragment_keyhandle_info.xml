@@ -28,10 +28,10 @@
             <ImageView
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:src="@drawable/key_detail"
+                android:src="@drawable/ic_key_list_item_icon_red"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
             <RelativeLayout style="@style/KeyDetailTextContainer"
                 android:layout_marginTop="8dp"

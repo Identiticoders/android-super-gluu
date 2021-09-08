@@ -158,9 +158,9 @@ dependencies {
     implementation "com.google.android.gms:play-services-gcm:$play_services_version"
     implementation "com.google.firebase:firebase-core:$play_services_version"
     //Google AD
-    implementation "com.google.firebase:firebase-ads:$play_services_version"
+//    implementation "com.google.firebase:firebase-ads:$play_services_version"
     //For in app purchases
-    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
+//    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
     //Circle progressBar
     implementation 'com.dinuscxj:circleprogressbar:1.1.1'
     //For swipe gesture for table

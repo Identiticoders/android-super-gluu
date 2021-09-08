@@ -3,8 +3,6 @@
 
     <item android:drawable="@android:color/white"/>
 
-    <item android:top="120dp" >
-        <bitmap android:src="@drawable/splash_icon" android:gravity="top|center_horizontal"/>
-    </item>
+    <item android:top="120dp" android:width="120dp" android:height="120dp" android:drawable="@drawable/ic_icon_red" android:gravity="top|center_horizontal"/>
 
 </layer-list>

@@ -37,9 +37,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+//import com.google.android.gms.ads.AdListener;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.Gson;
 
 import org.gluu.super_gluu.app.GluuApplication;
@@ -121,7 +121,7 @@ public class MainNavDrawerActivity extends BaseActivity
 
     private Settings settings = new Settings();
 
-    private InterstitialAd interstitialAd;
+//    private InterstitialAd interstitialAd;
 
     private BroadcastReceiver mPushMessageReceiver = new BroadcastReceiver() {
         @Override

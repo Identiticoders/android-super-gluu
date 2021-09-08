@@ -70,13 +70,13 @@
             android:text="" />
 
         <ImageView
-            android:layout_centerVertical="true"
             android:id="@+id/log_image_view"
-            android:layout_toEndOf="@+id/logCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="18dp"
-            android:src="@drawable/log_row_item_green_icon" />
+            android:layout_toEndOf="@+id/logCheckBox"
+            android:src="@drawable/ic_icon_round_green" />
 
         <LinearLayout
             android:layout_width="wrap_content"

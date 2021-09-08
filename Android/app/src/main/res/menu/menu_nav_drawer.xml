@@ -7,11 +7,11 @@
             <group android:checkableBehavior="none">
                 <item
                     android:id="@+id/nav_logs"
-                    android:icon="@drawable/icon_logs"
+                    android:icon="@drawable/ic_icon_logs_red"
                     android:title="@string/logs" />
                 <item
                     android:id="@+id/nav_keys"
-                    android:icon="@drawable/icon_keys"
+                    android:icon="@drawable/ic_icon_keys_red"
                     android:title="@string/keys" />
             </group>
         </menu>

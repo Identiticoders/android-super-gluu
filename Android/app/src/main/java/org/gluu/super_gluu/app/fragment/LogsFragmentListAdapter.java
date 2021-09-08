@@ -128,10 +128,10 @@ public class LogsFragmentListAdapter extends BaseAdapter {
         if (log.getLogState() == LogState.ENROL_FAILED || log.getLogState() == LogState.LOGIN_FAILED
                 || log.getLogState() == LogState.UNKNOWN_ERROR || log.getLogState() == LogState.LOGIN_DECLINED || log.getLogState() == LogState.ENROL_DECLINED){
             ImageView logo = view.findViewById(R.id.log_image_view);
-            logo.setImageResource(R.drawable.log_row_item_red_icon);
+            logo.setImageResource(R.drawable.ic_icon_round_red);
         } else {
             ImageView logo = view.findViewById(R.id.log_image_view);
-            logo.setImageResource(R.drawable.log_row_item_green_icon);
+            logo.setImageResource(R.drawable.ic_icon_round_green);
         }
         RelativeLayout log_main_view = view.findViewById(R.id.log_main_view);
         log_main_view.setTag(position);

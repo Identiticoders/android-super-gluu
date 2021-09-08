@@ -77,7 +77,7 @@ public class AppFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, GluuApplication.CHANNEL_ID)
                 .setContentIntent(mainPendingIntent)
-                .setSmallIcon(R.drawable.push_icon)
+                .setSmallIcon(R.drawable.ic_push_icon)
                 .setSound(defaultSoundUri)
                 .setContentTitle(title)
                 .setContentText(contentText)
