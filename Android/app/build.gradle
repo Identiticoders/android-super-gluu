@@ -18,7 +18,7 @@ repositories {
 android {
     signingConfigs {
         config {
-            keyAlias 'azpass'
+            keyAlias 'azpass-android-key'
             keyPassword 'flow88serve'
             storeFile file('../../upload-keystore.jks')
             storePassword 'flow88serve'
@@ -30,7 +30,7 @@ android {
         applicationId "sg.azpass"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 63 // CHANGE THIS BEFORE UPLOAD
+        versionCode 1 // CHANGE THIS BEFORE UPLOAD
         versionName "1.0.0"
         multiDexEnabled true
         signingConfig signingConfigs.config
