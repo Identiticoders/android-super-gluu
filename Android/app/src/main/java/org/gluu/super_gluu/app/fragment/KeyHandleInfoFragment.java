@@ -41,7 +41,7 @@ import butterknife.ButterKnife;
  */
 public class KeyHandleInfoFragment extends ToolbarFragment {
 
-    final SimpleDateFormat isoDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+    final SimpleDateFormat isoDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
     final SimpleDateFormat userDateTimeFormat = new SimpleDateFormat("MMM d, yyyy HH:mm:ss");
 
     private static final String ARG_PARAM1 = "tokenEntry";
