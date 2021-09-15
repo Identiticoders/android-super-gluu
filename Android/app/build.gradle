@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.25.3'
+        classpath 'io.fabric.tools:gradle:1.31.2'
     }
 }
 
@@ -18,20 +18,20 @@ repositories {
 android {
     signingConfigs {
         config {
-            keyAlias Gluu_Key_Alias
-            keyPassword Gluu_Key_Password
-            storeFile file(Gluu_Keystore_File_Location)
-            storePassword Gluu_Store_Password
+            keyAlias 'azpass'
+            keyPassword 'flow88serve'
+            storeFile file('../../upload-keystore.jks')
+            storePassword 'flow88serve'
         }
     }
-    compileSdkVersion 28
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 31
+    buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "gluu.org.super.gluu"
+        applicationId "sg.azpass"
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 63
-        versionName "3.1.3"
+        targetSdkVersion 31
+        versionCode 1 // CHANGE THIS BEFORE UPLOAD
+        versionName "1.0.0"
         multiDexEnabled true
         signingConfig signingConfigs.config
     }
@@ -45,33 +45,73 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "VENDOR_CERTIFICATE_CERT", Gluu_Debug_Vendor_Cert
-            buildConfigField "String", "VENDOR_CERTIFICATE_PRIVATE_KEY", Gluu_Debug_Vendor_Certificate_Private_Key
+            buildConfigField "String", "VENDOR_CERTIFICATE_CERT",
+                    "          \"30820226308201cca00302010202818100f32c0f96f91b9f00a612ae2969\" +\n" +
+                            "          \"78633dbbb1b13fad7172ee73d1aad27faf81390d265b16f7f2ba8b3e0dbd\" +\n" +
+                            "          \"34f79b9b074268c8cf1c72648efde650e887a438b3ca091ef20b991eb3e7\" +\n" +
+                            "          \"fb31ac726a9866983e1d12f9ae2a317e7d1b103f9b501bbcdead3a2da3c7\" +\n" +
+                            "          \"88cf45e33daba9899c505ed4871871d3b8f86b8b69dfa1996b300a06082a\" +\n" +
+                            "          \"8648ce3d040302305c3120301e06035504031317476c7575206f78507573\" +\n" +
+                            "          \"6832205532462076312e302e30310d300b060355040a1304476c7575310f\" +\n" +
+                            "          \"300d0603550407130641757374696e310b3009060355040813025458310b\" +\n" +
+                            "          \"3009060355040613025553301e170d3136303330313138353934365a170d\" +\n" +
+                            "          \"3139303330313138353934365a305c3120301e06035504031317476c7575\" +\n" +
+                            "          \"206f785075736832205532462076312e302e30310d300b060355040a1304\" +\n" +
+                            "          \"476c7575310f300d0603550407130641757374696e310b30090603550408\" +\n" +
+                            "          \"13025458310b30090603550406130255533059301306072a8648ce3d0201\" +\n" +
+                            "          \"06082a8648ce3d0301070342000480942a7cc21393c9eed8a188a918bba1\" +\n" +
+                            "          \"39532fec67e452aacfcc9d426dd2d07c1bc19283d9caa3a3f6e36e2257d9\" +\n" +
+                            "          \"575fd3e297cab0e287d9f9f0175dea5ba783300a06082a8648ce3d040302\" +\n" +
+                            "          \"03480030450220516c1ac00076b9d511590ce20d756348e8bf41cb97891c\" +\n" +
+                            "          \"7296a8f9b6117016160221008663e0936458bb25d921674e670e96d26090\" +\n" +
+                            "          \"533a8d44b5c921ee4d2a72f9ced1\""
 
+            buildConfigField "String", "VENDOR_CERTIFICATE_PRIVATE_KEY", "\"e759e9d754f05b2b1d3083418d87d3c36647d88f09c48b72b27dd5e934317899\""
             buildConfigField "String", "OX_SERVER_CERT", "\"\""
-            buildConfigField "boolean", "TRUST_ALL_CERT", "false"
+//            buildConfigField "boolean", "TRUST_ALL_CERT", "false"
 
-            buildConfigField "String", "PROJECT_NUMBER", Gluu_Project_Number
-            buildConfigField "String", "INTERSTITIAL_AD_ID", Gluu_Release_Interstitial_Ad_Id
-            buildConfigField "String", "BANNER_AD_ID", Gluu_Release_Banner_Ad_Id
-            buildConfigField "String", "PURCHASE_LICENSE", Gluu_Purchase_License
-            buildConfigField "String", "SUBSCRIPTION_ID", Gluu_Subscription_Id
-            buildConfigField "String", "FINGERPRINT_NAME", Gluu_Fingerprint_Name
+//            buildConfigField "String", "PROJECT_NUMBER", "\"815756138308\""
+//            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"ca-app-pub-3940256099942544/1033173712\""
+//            buildConfigField "String", "BANNER_AD_ID", "\"ca-app-pub-3940256099942544/6300978111\""
+//            buildConfigField "String", "PURCHASE_LICENSE", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyYw9xTiyhyjQ6mnWOwEWduDkOM84BkqHfN+jrAu82M0xBwg3RAorPwT/38sMcOZMAwcWudN0vjQo7uXAl2j4+N7BiMI2qlO2x33wY8fDvlN4ue54BBdZExZhTpkVEAmIm9cLCI3i+nOlUZgiwX6+sQOb5K+7q9WiNuSBDWRR2WDNOY7QmQdI1VzbHBPQoM00N9/0UDSFCw4LCRngm7ZeuW8AQMyYo6r5K3dy8m+Ys0JWGKA+xuQY4ZutSb47IYX4m7lzxbN0mqH9TLeA3V6audrhs5i0OYYKwbCd68NikB7Wco6L/HOzh1y6LoxIFXZ6M+vnZ6OLfTJuVmEfTOOhIwIDAQAB\""
+//            buildConfigField "String", "SUBSCRIPTION_ID", "\"org.gluu.monthly.ad.free\""
+//            buildConfigField "String", "FINGERPRINT_NAME", "\"androidHive\""
+
         }
         release {
-            buildConfigField "String", "VENDOR_CERTIFICATE_CERT", Gluu_Release_Vendor_Cert
-            buildConfigField "String", "VENDOR_CERTIFICATE_PRIVATE_KEY", Gluu_Release_Vendor_Certificate_Private_Key
+            buildConfigField "String", "VENDOR_CERTIFICATE_CERT",
+                    "          \"30820226308201cca00302010202818100f32c0f96f91b9f00a612ae2969\" +\n" +
+                            "          \"78633dbbb1b13fad7172ee73d1aad27faf81390d265b16f7f2ba8b3e0dbd\" +\n" +
+                            "          \"34f79b9b074268c8cf1c72648efde650e887a438b3ca091ef20b991eb3e7\" +\n" +
+                            "          \"fb31ac726a9866983e1d12f9ae2a317e7d1b103f9b501bbcdead3a2da3c7\" +\n" +
+                            "          \"88cf45e33daba9899c505ed4871871d3b8f86b8b69dfa1996b300a06082a\" +\n" +
+                            "          \"8648ce3d040302305c3120301e06035504031317476c7575206f78507573\" +\n" +
+                            "          \"6832205532462076312e302e30310d300b060355040a1304476c7575310f\" +\n" +
+                            "          \"300d0603550407130641757374696e310b3009060355040813025458310b\" +\n" +
+                            "          \"3009060355040613025553301e170d3136303330313138353934365a170d\" +\n" +
+                            "          \"3139303330313138353934365a305c3120301e06035504031317476c7575\" +\n" +
+                            "          \"206f785075736832205532462076312e302e30310d300b060355040a1304\" +\n" +
+                            "          \"476c7575310f300d0603550407130641757374696e310b30090603550408\" +\n" +
+                            "          \"13025458310b30090603550406130255533059301306072a8648ce3d0201\" +\n" +
+                            "          \"06082a8648ce3d0301070342000480942a7cc21393c9eed8a188a918bba1\" +\n" +
+                            "          \"39532fec67e452aacfcc9d426dd2d07c1bc19283d9caa3a3f6e36e2257d9\" +\n" +
+                            "          \"575fd3e297cab0e287d9f9f0175dea5ba783300a06082a8648ce3d040302\" +\n" +
+                            "          \"03480030450220516c1ac00076b9d511590ce20d756348e8bf41cb97891c\" +\n" +
+                            "          \"7296a8f9b6117016160221008663e0936458bb25d921674e670e96d26090\" +\n" +
+                            "          \"533a8d44b5c921ee4d2a72f9ced1\""
+
+            buildConfigField "String", "VENDOR_CERTIFICATE_PRIVATE_KEY", "\"e759e9d754f05b2b1d3083418d87d3c36647d88f09c48b72b27dd5e934317899\""
 
             buildConfigField "String", "OX_SERVER_CERT", "\"\""
-            buildConfigField "boolean", "TRUST_ALL_CERT", "false"
+//            buildConfigField "boolean", "TRUST_ALL_CERT", "false"
 
-            buildConfigField "String", "PROJECT_NUMBER", Gluu_Project_Number
+//            buildConfigField "String", "PROJECT_NUMBER", "\"815756138308\""
 
-            buildConfigField "String", "INTERSTITIAL_AD_ID", Gluu_Debug_Interstitial_Ad_Id
-            buildConfigField "String", "BANNER_AD_ID", Gluu_Debug_Banner_Ad_Id
-            buildConfigField "String", "PURCHASE_LICENSE", Gluu_Purchase_License
-            buildConfigField "String", "SUBSCRIPTION_ID", Gluu_Subscription_Id
-            buildConfigField "String", "FINGERPRINT_NAME", Gluu_Fingerprint_Name
+//            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"ca-app-pub-3326465223655655/1731023230\""
+//            buildConfigField "String", "BANNER_AD_ID", "\"ca-app-pub-3932761366188106~2301594871\""
+//            buildConfigField "String", "PURCHASE_LICENSE", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyYw9xTiyhyjQ6mnWOwEWduDkOM84BkqHfN+jrAu82M0xBwg3RAorPwT/38sMcOZMAwcWudN0vjQo7uXAl2j4+N7BiMI2qlO2x33wY8fDvlN4ue54BBdZExZhTpkVEAmIm9cLCI3i+nOlUZgiwX6+sQOb5K+7q9WiNuSBDWRR2WDNOY7QmQdI1VzbHBPQoM00N9/0UDSFCw4LCRngm7ZeuW8AQMyYo6r5K3dy8m+Ys0JWGKA+xuQY4ZutSb47IYX4m7lzxbN0mqH9TLeA3V6audrhs5i0OYYKwbCd68NikB7Wco6L/HOzh1y6LoxIFXZ6M+vnZ6OLfTJuVmEfTOOhIwIDAQAB\""
+//            buildConfigField "String", "SUBSCRIPTION_ID", "\"org.gluu.monthly.ad.free\""
+//            buildConfigField "String", "FINGERPRINT_NAME", "\"androidHive\""
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -82,7 +122,7 @@ android {
     productFlavors {
         gluu {
             dimension "standard"
-            resValue "string", "versionNumber", "V" + defaultConfig.versionName
+            resValue "string", "versionNumber", "AZ" + defaultConfig.versionName
         }
         whiteLabel {
             applicationId "com.whitelabel"
@@ -96,23 +136,23 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     //support libraries
-    implementation "com.android.support:appcompat-v7:$android_support_version"
-    implementation "com.android.support:design:$android_support_version"
-    implementation "com.android.support:support-v4:$android_support_version"
-    implementation "com.android.support:recyclerview-v7:$android_support_version"
-    implementation "com.android.support:cardview-v7:$android_support_version"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
     implementation 'commons-codec:commons-codec:1.10'
-    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'org.bouncycastle:bcprov-jdk15on:1.56'
     implementation 'com.journeyapps:zxing-android-embedded:3.3.0@aar'
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.hrules:horizontalnumberpicker:1.1.1'
     implementation 'io.reactivex:rxandroid:1.2.1'
-    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.android.volley:volley:1.2.1'
     //FCM instead of GMS
     implementation "com.google.firebase:firebase-messaging:$play_services_version"
     implementation "com.google.android.gms:play-services-gcm:$play_services_version"
@@ -127,17 +167,17 @@ dependencies {
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
 
     //Butterknife for view injection
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
     // Lifecycles libraries
-    implementation "android.arch.lifecycle:runtime:1.1.1"
-    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.1'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-    implementation('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
-        transitive = true;
-    }
+//    implementation('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
+//        transitive = true;
+//    }
 }
 
 apply plugin: 'com.google.gms.google-services'
